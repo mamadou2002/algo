@@ -1,0 +1,37 @@
+ALGORITHM phrase
+VAR
+nbrC; nbrM; nbrV = INTEGER   
+BEGIN
+    FUNCTION nombres_Caracteres(phrase:"Papa va au marche .") : INTEGER
+    VAR
+        nbrC:=0
+        i=INTEGER
+    BEGIN
+       FOR i=O FROM lengh.phrase - 1; 
+           nbrC = nbrC+1
+       END_FOR 
+        RETURN nbrC ;
+    END
+    FUNCTION nombres_Mots(phrase:"Papa va au marche .") : INTEGER
+    VAR
+       prec, nbrM:= '', 0
+    BEGIN
+    FOR char in phrase 
+        nbrM += int(prec == ' ' and char != ' ')
+...         prec = char
+    END_FOR
+        RETURN nbrM ;
+    END
+    FUNCTION nombres_voyelles(phrase:"Papa va au marche .") : INTEGER
+    VAR
+        nbrV:=0
+        i=INTEGER
+    BEGIN
+        FOR i=0 FROM lengh.phrase - 1; 
+            IF (phrase[i]='a' ou phrase[i]='e' ou phrase[i]='i' ou phrase[i]='o' ou phrase[i]='u' ou phrase[i]='y') THEN
+                nbrV = nbrV+1
+            END_IF
+        END_FOR
+        RETURN nbrV ;
+    END
+END
